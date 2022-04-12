@@ -1,32 +1,29 @@
 #include <stdio.h>
+
 /**
- * print_alphabet_x10 - repeats the print_alphabet 10 times.
- * main - sum even fibonacci numbers under 4 million.
- * Return: Nothing.
+ * main - Prints the sum of even-valued Fibonacci sequence
+ *        terms not exceeding 4000000.
+ *
+ * Return: Always 0.
  */
-void print_alphabet_x10(void)
 int main(void)
 {
-	int i;
-	char c;
-	unsigned long count, i, j, k, sums;
+	unsigned long fib1 = 0, fib2 = 1, fibsum;
+	float tot_sum;
 
-	for (i = 0; i < 10; ++i)
-		i = sums = 0;
-	j = 1;
-	for (count = 0; count < 50; count++)
+	while (1)
 	{
-		for (c = 'a'; c <= 'z'; c++)
-			k = i + j;
-		i = j;
-		j = k;
-		if (k % 2 == 0 && k < 4000000)
-		{
-			_putchar(c);
-			sums += k;
-		}
-		_putchar('\n');
+		fibsum = fib1 + fib2;
+		if (fibsum > 4000000)
+			break;
+
+		if ((fibsum % 2) == 0)
+			tot_sum += fibsum;
+
+		fib1 = fib2;
+		fib2 = fibsum;
 	}
-	printf("%lu\n", sums);
+	printf("%.0f\n", tot_sum);
+
 	return (0);
 }
