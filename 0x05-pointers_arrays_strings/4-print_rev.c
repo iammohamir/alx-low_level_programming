@@ -3,7 +3,6 @@
 /**
  * print_rev - function with 1 argument
  * @s: 1st argument char type
- *
  * Description: function that prints a string in reverse
  * Return: na
  */
